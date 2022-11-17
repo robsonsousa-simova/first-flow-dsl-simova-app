@@ -1,0 +1,8 @@
+// Modulo Lang: parte final do aplicativo
+
+// Linha 5: determina qual será o texto apresentado quando algo estiver relacionado com a entidade determinada (nesse
+// caso, Boletim)
+EntityLabel.Boletim = Turno
+// Linha 7: determina qual será o texto apresentado quando algo estiver relacionado com o campo determinado (nesse caso,
+// Apontamento).
+FieldLabel.Apontamento.text = Descrição

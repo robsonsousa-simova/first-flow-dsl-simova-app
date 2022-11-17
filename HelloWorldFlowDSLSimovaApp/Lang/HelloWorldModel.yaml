@@ -1,32 +1,14 @@
-# Modulo Model: contém a representação das entidades que serão necessárias para que a regra de negócio seja atendida
-
-# Linha 4: declaração da entidade Auth que é uma entidade de declaração obrigatória
 Auth
-#  Linha 6: campo filial declarado com o tipo int
 filial int
 
-# Linha 9: entidade AuthInput utilizada para o preenchimento dos dados da entidade Auth
 AuthInput
-  # Linha 11: o core irá apresentar uma tela para input de valor numérico
   filial int
-  # Linha 13: o core irá apresentar uma tela para input alfanumérico
   operador String
 
-# Linha 15: entidade principal desse aplicativo. O nome Boletim é padrão, mas não mandatório
 Boletim sync=out  cleanupDays=1
-  # Linha 19: o core entende que o preenchimento do campo será automático utilizando o método incremental que usa como 
-  # referência o último valor gerado para a entidade Boletim
   id inc
-  # Linha 23: pode ser do tipo List<> em conjunto com o atributo transient o core irá iniciar o preenchimento de um 
-  # registro da entidade Apontamento. O preenchimento desse campo somente inicia quando o usuário clica na ação  
-  # gerada automaticamente pelo core e apresentada na tela de preenchimento de um registro da entidade Boletim.
   apontamentos List<Apontamento> transient
 
-# Linha 27: assim como a entidade Boletim, possui o atributo sync=out o que faz com que o registro preenchido pelo 
-# usuário seja enviado para o Web Service
 Apontamento sync=out
-  # Linha 30: o core entende que o preenchimento do campo será automático utilizando o método incremental que usa como 
-  # referência o último valor gerado para a entidade Apontamento
   id inc
-  # Linha 32: o core irá apresentar uma tela para input alfanumérico do tipo String
   text String
